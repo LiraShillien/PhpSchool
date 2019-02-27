@@ -72,7 +72,10 @@ class LinkedList
     {
         $at = $this->search($atVal);
         $prev = $at->getPrevious();
-        $prev->setNext($at->getNext());
+        $next = $at->getNext();
+        $prev->setNext($next);
+        $next->setPrevious($prev);
+
     }
 
     public function search($value)
