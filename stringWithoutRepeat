@@ -1,0 +1,36 @@
+<?php
+function repeat($str)
+{
+    $b = [];
+    $a = '';
+    $c = [];
+    $arr = str_split($str);
+    
+    foreach ($arr as $value) {
+        if ((!strstr($a, $value))) {
+            $a .= $value;
+        } else {
+            $b[] = $a;
+            $a = '';
+            $a .= $value;
+        }
+    }
+    
+    $b[] = $a;
+    $max = 0;
+    
+    for ($i = 0; $i < count($b); $i++) {
+        if (strlen($b[$i])>$max){
+            $max = strlen($b[$i]);
+        }
+    }
+    
+    foreach ($b as $value){
+        if(strlen($value) == $max){
+            $c[] = $value;
+        }
+    }
+    return $c;
+}
+
+var_dump(repeat('achfghcabcal'));
