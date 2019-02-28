@@ -14,9 +14,9 @@ function repeat($str)
             $a = str_replace($a[$j], '', $a);
         }
     }
-    for($i = 0; $i < substr_count($str, $a); $i++){
-         $b[] = $a;
-     };
+    
+    $b[] = $a;
+     
 
     return $b;
 }
